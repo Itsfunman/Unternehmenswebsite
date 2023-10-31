@@ -5,40 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us - Unternehmens Website</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <style>
-        #weatherContainer {
-            background-color: #43455C;
-            padding: 20px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            border-radius: 25px;
-            width: 55%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #weatherTitle {
-            color: #3bba9c;
-            margin-bottom: 10px;
-            text-align: center;
-        }
-
-        #temperature {
-            color: #FFFFFF;
-            font-size: 2rem;
-            text-align: center;
-            display: block;
-        }
-    </style>
-    <script>
-        async function getWeather() {
-            const response = await fetch('https://wttr.in/Wien?format=%t');
-            const temperature = await response.text();
-            document.getElementById("temperature").innerText = temperature;
-        }
-    </script>
+    
 </head>
-<body onload="getWeather()">
+<body>
     <div class="header">
         <a href="../html/bewertungen.html"><h4 class="changeButton">Bewertungen</h4></a>
         <a href="../html/kontakt.html"><h4 class="changeButton">Kontakt</h4></a>
@@ -47,10 +16,8 @@
         <a href="../html/team.html"><h4 class="changeButton">Team</h4></a>
     </div>
 
-    <div class="title">
-        <h3 class="title">Aktuelles Wetter in Wien</h3>
-        <p class="temparature">
-        </p>
+ <div class="title">
+        <h1>Über uns</h1>
     </div>
 
 </body>
