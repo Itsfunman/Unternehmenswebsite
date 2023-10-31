@@ -1,0 +1,57 @@
+* {
+  background-color: #2e3047;
+}
+
+.header, .changeButton {
+  background-color: #3c3f58;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px;
+
+}
+
+.header {
+    width: screen;
+}
+
+.changeButton {
+  color: #707793;
+  padding: 25px;
+
+}
+
+.title {
+  color: #3bba9c;
+  text-align: center;
+  background-color: transparent;
+}
+
+.infoPanel {
+    background-color: #43455C;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 55%;
+    border-radius: 25px;
+}
+
+.infoPanel > img, .textBox {
+    display: inline; 
+}
+
+.infoPanel > img {
+    float: left;
+    background-color: transparent;
+    padding: 10px;
+    padding-right: 20px;
+}
+
+.text {
+    background-color: transparent;
+    color: #FFFFFF;
+}
+
+.textBox > .text {
+    text-align: left;
+    padding-left: 15px;
+}
