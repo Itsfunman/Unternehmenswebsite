@@ -5,7 +5,7 @@
 .header, .changeButton {
   background-color: #3c3f58;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 0px;
 
 }
