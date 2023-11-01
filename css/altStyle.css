@@ -1,4 +1,4 @@
-* {
+body {
   background-color: #2e3047;
 }
 
@@ -30,6 +30,16 @@
     color: #3bba9c;
 }
 
+.leaflet-control {
+  background-color: transparent;
+  border: none;
+}
+
+.leaflet-control-attribution,
+.leaflet-control-layers-toggle {
+  background-color: rgba(255, 255, 255, 0.7);  /* Sie können die Farbe und die Transparenz nach Bedarf anpassen */
+}
+
 .boxes {
   display: flex;
   align-items: center;
@@ -37,16 +47,7 @@
   justify-content: s;
 }
 
-.infoPanel {
-    display: grid;
-    grid-template-columns: 360px 1fr;
-    grid-template-rows: 10px 1fr 3fr;
-    width: 950px;
-    border-radius: 25px;
-    background-color:  #43455C;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+
 
 .infoImg {
     background-color: #43455C;
@@ -67,8 +68,69 @@
 
 .text {
     grid-area: 3 / 2 / 4 / 3; 
+    color: white;
     background-color: #43455C;
     display: flex;
     align-self: flex-start;
     max-width: 560px;
+}
+
+.text-kontakt {
+  max-width: none;
+}
+
+.commonStyles {
+  border-radius: 25px;
+  background-color: #43455C;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.infoPanel, .KontaktPanel {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  grid-template-rows: 10px 1fr 3fr;
+  width: 950px;
+}
+
+.KontaktPanel {
+  width: 70%;
+  height: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.boxTitle {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-size: 1em;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.infoPanel .text, .infoPanel {
+  color: white;
+}
+
+.Link {
+  display: inline-block;
+  background-color: #007BFF;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+#map {
+  width: 100%;
+  height: 400px;
 }
