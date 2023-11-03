@@ -1,0 +1,17 @@
+@keyframes slideInLeft {
+     0% {
+        transform: translateX(-400px);
+     }
+
+     85% {
+        transform: translateX(50px);
+     }
+
+     100% {
+        transform: translateX(0px);
+     }
+}
+
+.slideInLeft {
+    animation: slideInLeft 1.5s ease-in;
+}
