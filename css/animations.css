@@ -15,7 +15,7 @@
 }
 
 .slideInLeft {
-  animation: slideInLeft 1.5s ease-in forwards;
+  animation: slideInLeft 0.8s ease-in forwards;
 }
 
 .delayAnimation-100 {
