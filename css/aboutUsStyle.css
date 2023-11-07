@@ -1,3 +1,7 @@
+:root {
+    --bg2: #2e3255;
+}
+
 .dataFields {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -10,9 +14,8 @@
 }
 
 .dataHeader {
-  text-align: left;
+  text-align: center;
   font-size: 6rem;
-  transform: translate(-12%, 0%);
 }
 
 .dataDescription {
@@ -21,18 +24,21 @@
 
 .motto {
   font-size: 4rem;
+  font-style: italic;
+  text-decoration: underline;
 }
 
 .aboutUsMain {
   text-align: left;
+  background-color: var(--bg2);
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+  border-radius: 12%;
 }
 
-.aboutUsMain h1 {
+.aboutUsMain h1, .aboutUsMain h2 {
   padding-left: 4%;
-}
-
-.aboutUsMain h2 {
-  padding-left: 4%;
+  background-color: var(--bg2);
 }
 
 .aboutUsMain p {
@@ -40,9 +46,11 @@
   font-size: large;
   padding-left: 2%;
   padding-right: 2%;
+  background-color: var(--bg2);
 }
 
 @media (max-width: 750px) {
+  
   .dataFields {
     grid-template-columns: 1fr;
   }
@@ -50,7 +58,6 @@
   .dataHeader {
     text-align: center;
     font-size: 4rem;
-    transform: translate(0%, 0%);
   }
 
   .dataDescription {
