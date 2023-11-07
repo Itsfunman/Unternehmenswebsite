@@ -1,18 +1,59 @@
 .dataFields {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .dataBox {
-    padding: 20%;
-    padding-top: 5%;
+  padding: 20%;
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 .dataHeader {
-    text-align: left;
-    font-size: 6rem;
+  text-align: left;
+  font-size: 6rem;
+  transform: translate(-12%, 0%);
 }
 
 .dataDescription {
-    text-align: left;
+  text-align: left;
+}
+
+.motto {
+  font-size: 4rem;
+}
+
+.aboutUsMain {
+  text-align: left;
+}
+
+.aboutUsMain h1 {
+  padding-left: 4%;
+}
+
+.aboutUsMain h2 {
+  padding-left: 4%;
+}
+
+.aboutUsMain p {
+  color: whitesmoke;
+  font-size: large;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+@media (max-width: 750px) {
+  .dataFields {
+    grid-template-columns: 1fr;
+  }
+
+  .dataHeader {
+    text-align: center;
+    font-size: 4rem;
+    transform: translate(0%, 0%);
+  }
+
+  .dataDescription {
+    text-align: center;
+  }
 }
