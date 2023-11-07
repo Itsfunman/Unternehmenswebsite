@@ -25,3 +25,19 @@
 .delayAnimation-200 {
   animation-delay: 200ms;
 }
+
+.delayAnimation-300 {
+  animation-delay: 300ms;
+}
+
+.delayAnimation-400 {
+  animation-delay: 400ms;
+}
+
+.delayAnimation-500 {
+  animation-delay: 500ms;
+}
+
+.delayAnimation-600 {
+  animation-delay: 600ms;
+}
