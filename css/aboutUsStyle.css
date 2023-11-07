@@ -1,0 +1,18 @@
+.dataFields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.dataBox {
+    padding: 20%;
+    padding-top: 5%;
+}
+
+.dataHeader {
+    text-align: left;
+    font-size: 6rem;
+}
+
+.dataDescription {
+    text-align: left;
+}
