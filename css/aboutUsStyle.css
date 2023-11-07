@@ -50,6 +50,7 @@
 }
 
 @media (max-width: 750px) {
+  
   .dataFields {
     grid-template-columns: 1fr;
   }
