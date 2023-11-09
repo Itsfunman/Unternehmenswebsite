@@ -1,0 +1,66 @@
+.rundgang {
+  box-shadow: 0px 3px 0px 3px #14151d91;
+  width: 850px;
+  height: 480px;
+}
+
+.infoBox {
+    background-color: #43455C;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 55%;
+    border-radius: 25px;
+}
+
+.infoBox > img, .textBox {
+    display: inline; 
+}
+
+.infoBox > img {
+    float: left;
+    background-color: transparent;
+    padding: 10px;
+    padding-right: 20px;
+}
+
+.textBox > .text {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.infoImg {
+  background-color: #43455c;
+  grid-area: 2 / 1 / 4 / 2;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+}
+
+.boxTitle {
+  grid-area: 2 / 2 / 3 / 3;
+  color: #3bba9c;
+  background-color: #43455c;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+}
+
+.text {
+  grid-area: 3 / 2 / 4 / 3;
+  color: white;
+  background-color: #43455c;
+  display: flex;
+  align-self: flex-start;
+  max-width: 560px;
+}
+
+@media (max-width: 650px) {
+
+  .rundgang {
+    box-shadow: 0px 3px 0px 3px #14151d91;
+    width: 350px;
+    height: auto;
+  }
+
+}

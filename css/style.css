@@ -1,18 +1,24 @@
-* {
+body {
   background-color: #2e3047;
 }
 
-.header, .changeButton {
+h1, h2, h3, h4, h5, p {
+  background-color: transparent;
+}
+
+.header,
+.changeButton {
   background-color: #3c3f58;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
   margin: 0px;
-  text-wrap: nowrap;
-
 }
 
 .header {
     width: screen;
+    border-radius: 20px;
 }
 
 .changeButton {
@@ -27,32 +33,44 @@
   background-color: transparent;
 }
 
-.infoPanel {
-    background-color: #43455C;
-    padding: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    width: 55%;
-    border-radius: 25px;
+.commonStyles {
+  border-radius: 25px;
+  background-color: #43455c;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.infoPanel > img, .textBox {
-    display: inline; 
+.boxes {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.infoPanel > img {
-    float: left;
-    background-color: transparent;
-    padding: 10px;
-    padding-right: 20px;
+.panel {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  grid-template-rows: 10px 1fr 3fr;
+  width: 950px;
 }
 
-.text {
-    background-color: transparent;
-    color: #FFFFFF;
+.boxTitle {
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
-.textBox > .text {
-    text-align: left;
-    padding-left: 15px;
+.boxText {
+  font-size: 1em;
+  margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+@media (max-width: 650px) {
+  .changeButton, .header {
+    padding:5%;
+    flex-direction: column;
+    font-size: 1.5rem;
+  }
 }
