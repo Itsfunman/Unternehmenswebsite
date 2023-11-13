@@ -1,0 +1,40 @@
+
+  .text-team {
+    font-size: 1.1rem;
+    color: white;
+    max-width: none;
+    text-align: left;
+  }
+
+  .review {
+    width: 70%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  
+  .boxes img {
+    max-width: 150px; 
+    border-radius: 50%; 
+    justify-self: center;
+    align-self: center;
+  }
+  
+  
+  .boxes h3 {
+    margin-top: 0;
+  }
+
+
+  .boxTitleTeam {
+    grid-area: 2 / 2 / 3 / 3;
+    color: white;
+    background-color: #43455c;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+  }

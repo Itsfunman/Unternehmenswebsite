@@ -1,66 +1,85 @@
-.rundgang {
-  box-shadow: 0px 3px 0px 3px #14151d91;
-  width: 850px;
-  height: 480px;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-.infoBox {
-    background-color: #43455C;
-    padding: 20px;
-    margin-top: 20px;
+
+header{
+    width: 100%;
+    height: auto;
+  position: relative;
+    top: 0;
+    left: 0; 
+}
+
+div.navpoint {
+
+    background-image: url('../assets/Banenr.png');
+    width: 100%;
+    height: 250px;
+    position: relative;
+    background-size: cover; 
+    background-position: center; 
+    transition: opacity 0.3s ease-in-out;
+    }
+    
+    div.navpoint:hover {
+    background-image: url('../assets/BTeam.png');
+    width: 100%;
+    height: 250px;
+    position: relative;
+    background-size: cover; 
+    background-position: center; 
+    transition: opacity 0.3s ease-in-out;
+    }
+
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.service-box {
+    width: 30%;
     margin-bottom: 20px;
-    width: 55%;
-    border-radius: 25px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 
-.infoBox > img, .textBox {
-    display: inline; 
-}
-
-.infoBox > img {
-    float: left;
-    background-color: transparent;
-    padding: 10px;
-    padding-right: 20px;
-}
-
-.textBox > .text {
-    text-align: left;
-    padding-left: 15px;
-}
-
-.infoImg {
-  background-color: #43455c;
-  grid-area: 2 / 1 / 4 / 2;
-  display: flex;
-  justify-self: center;
-  align-self: center;
-}
-
-.boxTitle {
-  grid-area: 2 / 2 / 3 / 3;
-  color: #3bba9c;
-  background-color: #43455c;
-  display: flex;
-  justify-self: center;
-  align-self: center;
-}
-
-.text {
-  grid-area: 3 / 2 / 4 / 3;
-  color: white;
-  background-color: #43455c;
-  display: flex;
-  align-self: flex-start;
-  max-width: 560px;
-}
 
 @media (max-width: 650px) {
 
-  .rundgang {
-    box-shadow: 0px 3px 0px 3px #14151d91;
-    width: 350px;
-    height: auto;
+    .rundgang {
+      box-shadow: 0px 3px 0px 3px #14151d91;
+      width: 350px;
+      height: auto;
+    }
+    .service-box {
+        width: 100%;
+    }
+  
+  }
+  
+.service-box h2 {
+    margin-bottom: 10px; 
+    word-wrap: break-word; 
+    color: #3bba9c;
+    text-align: center;
+}
+
+.service-box p {font-size: 1em;
+    margin-bottom: 10px;
+
+    width: 100%;
+    color: white;
   }
 
-}
+  .rundgang {
+    box-shadow: 0px 3px 0px 3px #14151d91;
+    width: 850px;
+    height: 480px;
+  }
+  
