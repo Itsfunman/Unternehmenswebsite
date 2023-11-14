@@ -1,4 +1,4 @@
-var map = L.map('map').setView([48.2318921, 16.4127015], 15);  // Koordinaten
+const map = L.map('map').setView([48.2318921, 16.4127015], 15);  // Koordinaten
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

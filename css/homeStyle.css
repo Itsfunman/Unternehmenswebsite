@@ -5,34 +5,33 @@ body {
 }
 
 
-header{
+header {
     width: 100%;
     height: auto;
-  position: relative;
+    position: relative;
     top: 0;
-    left: 0; 
+    left: 0;
 }
 
 div.navpoint {
-
     background-image: url('../assets/Banenr.png');
     width: 100%;
     height: 250px;
     position: relative;
-    background-size: cover; 
-    background-position: center; 
+    background-size: cover;
+    background-position: center;
     transition: opacity 0.3s ease-in-out;
-    }
-    
-    div.navpoint:hover {
+}
+
+div.navpoint:hover {
     background-image: url('../assets/BTeam.png');
     width: 100%;
     height: 250px;
     position: relative;
-    background-size: cover; 
-    background-position: center; 
+    background-size: cover;
+    background-position: center;
     transition: opacity 0.3s ease-in-out;
-    }
+}
 
 .services {
     display: flex;
@@ -49,37 +48,40 @@ div.navpoint {
     box-sizing: border-box;
 }
 
-
-@media (max-width: 650px) {
-
-    .rundgang {
-      box-shadow: 0px 3px 0px 3px #14151d91;
-      width: 350px;
-      height: auto;
-    }
-    .service-box {
-        width: 100%;
-    }
-  
-  }
-  
 .service-box h2 {
-    margin-bottom: 10px; 
-    word-wrap: break-word; 
+    margin-bottom: 10px;
+    word-wrap: break-word;
     color: #3bba9c;
     text-align: center;
 }
 
-.service-box p {font-size: 1em;
+.service-box p {
+    font-size: 1em;
     margin-bottom: 10px;
 
     width: 100%;
     color: white;
-  }
+}
 
-  .rundgang {
-    box-shadow: 0px 3px 0px 3px #14151d91;
+.rundgang {
+    box-shadow: 0 3px 0 3px #14151d91;
     width: 850px;
     height: 480px;
-  }
+    margin-bottom: 20px;
+}
+
+@media (max-width: 650px) {
+
+    .rundgang {
+        box-shadow: 0 3px 0 3px #14151d91;
+        width: 350px;
+        height: auto;
+    }
+
+    .service-box {
+        width: 100%;
+    }
+
+}
+
   
