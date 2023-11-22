@@ -10,6 +10,7 @@ h1, h2, h3, h4, h5, p {
 .changeButton {
   background-color: #3c3f58;
   display: flex;
+  justify-content: center;
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
@@ -24,7 +25,6 @@ h1, h2, h3, h4, h5, p {
 .changeButton {
   color: #707793;
   padding: 25px;
-
 }
 
 .title {
