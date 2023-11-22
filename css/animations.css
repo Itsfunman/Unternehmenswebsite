@@ -41,3 +41,22 @@
 .delayAnimation-600 {
   animation-delay: 600ms;
 }
+
+#employeeCountBox:hover {
+  background-image: url("../assets/employeesAboutUs.jpg");
+  background-size: cover;
+  border-radius: 25px;
+  color: white;
+}
+
+#revenueBox:hover {
+  background-image: url("../assets/revenueAboutUs.jpg");
+  background-size: cover;
+  border-radius: 25px;
+  color: white;
+}
+
+.infoBox:hover {
+  backdrop-filter: brightness(80%);
+  border-radius: 25px;
+}

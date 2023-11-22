@@ -33,4 +33,14 @@ async function runCounters() {
 }
 
 runCounters();
-  
+
+
+
+const aboutUsTitles = document.querySelectorAll('.aboutUsTitle');
+
+aboutUsTitles.forEach(title => {
+    title.addEventListener('click', () => {
+        const aboutUsText = title.nextElementSibling;
+        aboutUsText.style.display = (aboutUsText.style.display === 'none' || aboutUsText.style.display === '') ? 'block' : 'none';
+    });
+});

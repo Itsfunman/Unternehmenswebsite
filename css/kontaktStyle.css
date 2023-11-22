@@ -1,3 +1,10 @@
+.kontaktTitle {
+    font-size: 2em;
+    color: #3bba9c;
+    text-align: center;
+    margin: 2%;
+}
+
 .text-kontakt {
     max-width: none;
 }
