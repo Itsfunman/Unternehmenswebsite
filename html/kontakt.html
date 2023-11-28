@@ -26,33 +26,36 @@
 
 <div class="boxes">
     <div class="commonStyles kontaktBox slideInLeft delayAnimation">
-        <h3 class="kontaktTitle">E-Mail</h3>
-        <p class="boxText text-kontakt">
-            Schreiben Sie uns eine E-Mail und wir werden uns so schnell wie
-            möglich bei Ihnen melden. Wir beantworten alle E-Mails innerhalb von
-            24 Stunden an Werktagen. Wenn Sie spezifische Anfragen haben, geben
-            Sie bitte so viele Details wie möglich an, damit wir Ihnen am besten
-            helfen können.
-        </p>
-        <p class="centerBtn">
-            <a href="mailto:fhb211602@fh-vie.ac.at" class="link"
-            >fhb211602@fh-vie.ac.at</a
-            >
-        </p>
+        <h3 class="kontaktTitle">Kontaktformular</h3>
+        <p class="explanation">Bitte füllen Sie das Formular aus, um uns zu kontaktieren. Wir werden uns so schnell wie möglich bei Ihnen melden.</p>
+        <form action="https://formspree.io/f/xbjvvkyq" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="_replyto" required><br><br>
+            
+            <label for="phone">Telefonnummer:</label>
+            <input type="tel" id="phone" name="phone"><br><br>
+            
+            <div class="contact-preference">
+                <label for="contact-preference">Bevorzugte Kontaktmethode:</label><br>
+                <input type="radio" id="preferEmail" name="contact-preference" value="email" checked>
+                <label for="preferEmail">E-Mail</label>
+                <input type="radio" id="preferPhone" name="contact-preference" value="phone">
+                <label for="preferPhone">Telefon</label>
+            </div><br><br>
+            
+            <label for="message">Nachricht:</label>
+            <textarea id="message" name="message" required></textarea><br><br>
+            
+            <input type="hidden" name="_subject" value="Neue Anfrage von TECHSOLUTIONS!"/>
+            <input type="submit" value="Senden">
+        </form>
     </div>
 
-    <div class="commonStyles kontaktBox slideInLeft delayAnimation-100">
-        <h3 class="kontaktTitle">Telefon</h3>
-        <p class="boxText text-kontakt">
-            Rufen Sie uns an, wenn Sie sofortige Unterstützung benötigen. Unser
-            freundliches Kundenservice-Team steht Ihnen Montag bis Freitag von
-            9:00 bis 18:00 Uhr zur Verfügung. Wir freuen uns darauf, Ihre Fragen
-            zu beantworten und Ihnen die benötigte Unterstützung zu bieten.
-        </p>
-        <p class="centerBtn">
-            <a href="tel:00436606840007" class="link">+43 660 68 40 07</a>
-        </p>
-    </div>
+
+
 
     <div class="commonStyles kontaktBox slideInLeft delayAnimation-200">
         <h3 class="kontaktTitle">Adresse</h3>

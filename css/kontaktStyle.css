@@ -48,3 +48,78 @@
 .leaflet-control-layers-toggle {
     background-color: rgba(255, 255, 255, 0.7);
 }
+
+.kontaktBox input[type="text"],
+.kontaktBox input[type="email"],
+.kontaktBox textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white; 
+    font-size: 1em;
+}
+
+.kontaktBox label {
+    color: white;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.kontaktBox input[type="submit"] {
+    background-color: #3bba9c;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.kontaktBox input[type="submit"]:hover {
+    background-color: #33a58c; 
+}
+
+
+.kontaktBox .explanation {
+    color: white;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .kontaktBox input[type="text"],
+    .kontaktBox input[type="email"],
+    .kontaktBox textarea {
+        width: 100%; 
+    }
+}
+
+.kontaktBox input[type="tel"] {
+    width: 100%; 
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white; 
+}
+
+
+.contact-preference {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.contact-preference label,
+.contact-preference input {
+    margin-right: 10px;
+}
