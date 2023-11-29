@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="../css/kontaktStyle.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.14/widget.module.min.js" async defer></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.14/widget.min.js" async defer></script>
 </head>
-
 <body>
 <div class="header">
     <a href="./bewertungen.html"><h4 class="changeButton">Bewertungen</h4></a>
@@ -49,13 +50,18 @@
             <label for="message">Nachricht:</label>
             <textarea id="message" name="message" required></textarea><br><br>
             
-            <input type="hidden" name="_subject" value="Neue Anfrage von TECHSOLUTIONS!"/>
-            <input type="submit" value="Senden">
+            <div class="frc-captcha" data-sitekey="FCMLE2R88QIKFA8H" data-callback="onCaptchaCompleted"></div>
+    
+            <input type="submit" value="Senden" id="submitButton" hidden>
         </form>
+    
+        <script>
+            function onCaptchaCompleted() {
+                document.getElementById('submitButton').hidden = false;
+            }
+        </script>
     </div>
-
-
-
+    
 
     <div class="commonStyles kontaktBox slideInLeft delayAnimation-200">
         <h3 class="kontaktTitle">Adresse</h3>
