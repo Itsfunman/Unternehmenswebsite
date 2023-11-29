@@ -52,12 +52,12 @@
             
             <div class="frc-captcha" data-sitekey="FCMLE2R88QIKFA8H" data-callback="onCaptchaCompleted"></div>
     
-            <input type="submit" value="Senden" id="submitButton" disabled>
+            <input type="submit" value="Senden" id="submitButton" hidden>
         </form>
     
         <script>
             function onCaptchaCompleted() {
-                document.getElementById('submitButton').disabled = false;
+                document.getElementById('submitButton').hidden = false;
             }
         </script>
     </div>
