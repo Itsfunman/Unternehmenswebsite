@@ -1,19 +1,19 @@
-fetch('https://my.api.mockaroo.com/wee.json?key=3db0c550')
+fetch('https://my.api.mockaroo.com/daten.json?key=b968ed40')
 .then(response => response.json())
 .then(data => {
     const container = document.getElementById('dynamic-employees');
     data.forEach((person) => {
         const employeeBox = document.createElement('div');
-        employeeBox.className = 'commonStyles panel review slideInLeft delayAnimation';
+        employeeBox.className = 'employee-box panel review slideInLeft delayAnimation';
         
         employeeBox.innerHTML = `
-            <h3 class="boxTitleTeam">${person.first_name} ${person.last_name}</h3>
-            <p class="text-team">
-                Job-Titel: ${person.job_titel}<br>
-                Job-Fähigkeiten: ${person.job_skills}<br>
-                E-Mail: ${person.email}<br>
-                Telefonnummer: ${person.number}
-            </p>`;
+        <h3 class="boxTitleTeam">${person.first_name} ${person.last_name}</h3>
+        <p class="text-team-klein">
+             ${person.job_title}<br>
+            Fachgebiet: ${person.skill1}, ${person.skill2}<br>
+            ${person.first_name + "." + person.last_name + "@techsolutions.at"}<br>
+            ${person.phone}
+        </p>`;
         
         container.appendChild(employeeBox);
     });
