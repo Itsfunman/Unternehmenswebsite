@@ -38,3 +38,27 @@
     justify-self: center;
     align-self: center;
 }
+
+.text-team-klein {
+    text-align: center;
+    color:white; 
+}
+.employee-box {
+   width: 26%;
+    text-align: center;
+    border-radius: 25px;
+    background-color: #43455c;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left:37%; 
+    margin-right: 37%;
+  }
+
+
+  @media (max-width: 650px)  {
+    .employee-box {
+        width: 80%; 
+        margin-left:10%; 
+        margin-right: 10%;
+    }
+}
