@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="../css/bewertungenStyle.css">
+    <style>
+       
+    </style>
+    
 </head>
 <body>
 <div class="header">
@@ -21,7 +25,10 @@
 
 <div class="title">
     <h1>Bewertungen</h1>
+   
 </div>
+
+<div id="addReviewArea" onclick="showReviewPopup()">Bewertung hinzufügen</div>
 
 <div class="boxes">
     <div class="commonStyles panel review slideInLeft delayAnimation">
@@ -91,6 +98,18 @@
             anzukommen und erfolgreich zu sein.
         </p>
     </div>
-</div>
+    
+
+    <div id="reviewPopup">
+        <span class="closeButton" onclick="closeReviewPopup()">&times;</span>
+        <h3>Neue Bewertung</h3>
+        <input type="text" id="reviewTitle" class="reviewInput" placeholder="Titel"><br>
+        <textarea id="reviewText" class="reviewTextarea" placeholder="Bewertungstext"></textarea><br>
+        <input type="number" id="reviewStars" class="reviewInput" placeholder="Sterne (1-5)" min="1" max="5"><br>
+        <button onclick="saveReview()" class="reviewSaveButton">Speichern</button>
+    </div>
+    
+    <script src="../js/bewertungen.js"></script>
+
 </body>
 </html>
