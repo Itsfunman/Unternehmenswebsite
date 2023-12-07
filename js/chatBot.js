@@ -11,45 +11,37 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       console.log("File content:", data); // Log the file content
 
+      //Transforms the data into an array
       const lines = data.split("\n");
-      const lineNumber = 24;
+      const lineNumber = 0;
 
-      const specificLine = lines[lineNumber];
-      const { lineType, lineContent, end } = getLineElements(specificLine);
-      addMessage(lineType, lineContent);
-      addInputOptions(end, lines, lineNumber);
-
+      addLines(lineNumber, lines);
     })
     .catch((error) => {
       console.error("Error fetching the file:", error);
     });
 });
 
-function getLineContent(line) {
-  let lineContent = "";
+function addLines(lineNumber, lines) {
+  const specificLine = lines[lineNumber];
 
-  for (let i = 1; i < line.length - 1; i++) {
-    lineContent += line[i] + " ";
+  if (specificLine) { // Check if line exists
+    const { lineType, lineContent, end } = getLineElements(specificLine);
+    addMessage(lineType, lineContent);
+    addInputOptions(end, lines, lineNumber);
   }
-
-  return lineContent;
 }
-
+//Gets the content of the line
 function getLineElements(specificLine) {
-  let duplicateLine = specificLine.split(" ");
-  const lineType = duplicateLine[0];
-  const end = duplicateLine[duplicateLine.length - 1];
-  const lineContent = getLineContent(duplicateLine);
+  const splitLine = specificLine.split(" ");
+  const lineType = getElementAttribute(splitLine[0]);
+  const lineContent = getLineContent(splitLine);
+  const end = getEndNumbers(splitLine[splitLine.length - 1]);
 
   return { lineType, lineContent, end };
 }
 
-function addMessage(lineType, lineContent) {
-  const messageElement = document.createElement(getElementAttribute(lineType));
-  messageElement.textContent = lineContent;
-  chatbox.appendChild(messageElement);
-}
-
+//Returns the type of the line
 function getElementAttribute(lineType) {
   if (lineType == "[O]") {
     return "p";
@@ -60,19 +52,72 @@ function getElementAttribute(lineType) {
   }
 }
 
+function getLineContent(line) {
+  let lineContent = "";
+
+  for (let i = 1; i < line.length - 1; i++) {
+    lineContent += line[i] + " ";
+  }
+
+  return lineContent.trim(); // Trim to remove extra space at the end
+}
+
+function getEndNumbers(end) {
+  const cleanedEnd = end.replace(/\[|\]/g, "");
+  return cleanedEnd.split(",");
+}
+
+//adds the text to the chatbox
+function addMessage(lineType, lineContent) {
+  const messageElement = document.createElement(getElementAttribute(lineType));
+  messageElement.textContent = lineContent;
+  chatbox.appendChild(messageElement);
+}
+
+// Adds the next element
 function addInputOptions(end, lines, lineNumber) {
-    // Convert the array to a string and remove non-digit characters except commas
-    const cleanedEnd = end.replace(/[^\d,]/g, '');
+  // Split the cleaned string at each comma
+  const resultArray = end;
 
-    // Split the cleaned string at each comma
-    const resultArray = cleanedEnd.split(',');
+  for (let i = 0; i < resultArray.length; i++) {
+    lineNumber += 1;
 
-    // Now resultArray contains the individual numbers without brackets
-    console.log(resultArray);
+    const { lineType, lineContent, end } = getLineElements(lines[lineNumber]);
 
-    for (let i = 0; i < resultArray.length; i++) {
-        const specificLine = lines[lineNumber += 1];
-        const { lineType, lineContent, end } = getLineElements(specificLine);
-        addMessage(lineType, lineContent);
-    } 
+    // Create an element
+    const element = document.createElement(lineType);
+
+    // Append the element to the chatbox and set its text content
+    chatbox.appendChild(element).textContent = lineContent;
+
+    if (lineType === "button") {
+      element.addEventListener("click", () => {
+        console.log(end)
+        addLines(end, lines);
+      });
+    } else if (lineType === "input") {
+      element.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          // Check for Enter key
+          if (lineNumber + 1 == 26 || lineNumber + 1 == 27) {
+            if (element.textContent < 0) {
+              element.textContent = 1;
+            } else if (element.textContent > 10) {
+              element.textContent = 10;
+            }
+            if (lineNumber == 26) {
+              element.textContent *= 3000;
+            } else {
+              element.textContent *= 9000;
+            }
+          } else {
+            if (element.textContent < 0) {
+              element.textContent = 1;
+            }
+            element.textContent *= 200;
+          }
+        }
+      });
+    }
+  }
 }
