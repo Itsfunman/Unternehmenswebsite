@@ -11,7 +11,7 @@ fetch('https://my.api.mockaroo.com/daten.json?key=b968ed40')
         <p class="text-team-klein">
              ${person.job_title}<br>
             Fachgebiet: ${person.skill1}, ${person.skill2}<br>
-            ${person.first_name + "." + person.last_name + "@techsolutions.at"}<br>
+            ${person.first_name.toLowerCase() + "." + person.last_name.toLowerCase() + "@techsolutions.at"}<br>
             ${person.phone}
         </p>`;
         

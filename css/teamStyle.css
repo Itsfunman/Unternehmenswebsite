@@ -29,6 +29,14 @@
     margin-top: 0;
 }
 
+#dynamic-employees {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 4%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
 
 .boxTitleTeam {
     grid-area: 2 / 2 / 3 / 3;
@@ -44,14 +52,12 @@
     color:white; 
 }
 .employee-box {
-   width: 26%;
+   width: 100%;
     text-align: center;
     border-radius: 25px;
     background-color: #43455c;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left:37%; 
-    margin-right: 37%;
   }
 
 
