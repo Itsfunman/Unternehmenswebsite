@@ -23,6 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function addLines(lineNumber, lines, value) {
+  const allButtons = chatbox.querySelectorAll(".chatButton");
+  allButtons.forEach((button) => {
+    if (!button.classList.contains("selected")) {
+      button.classList.add("hidden");
+    }
+  });
+
   const specificLine = lines[lineNumber];
 
   if (specificLine) {
@@ -94,7 +101,6 @@ function addMessage(lineType, lineContent, value) {
 function addInputOptions(end, lines, lineNumber) {
   // Split the cleaned string at each comma
   const resultArray = end;
-  console.log(resultArray);
 
   for (let i = 0; i < resultArray.length; i++) {
     lineNumber = resultArray[i] - 1;
@@ -108,19 +114,24 @@ function addInputOptions(end, lines, lineNumber) {
     chatbox.appendChild(element).textContent = lineContent;
 
     if (lineType === "button") {
+      element.classList.add("chatButton");
       element.addEventListener("click", () => {
-        console.log(end)
-        if (end.length === 0) {
-          console.log("CALLED");
-          const exitMessage = document.createElement("p");
-          exitMessage.textContent =
-            "Vielen Dank für Ihr Interesse und viel Erfolg!";
-          chatbox.appendChild(exitMessage);
-        } else {
-          addLines(end - 1, lines, NaN);
+        if (!element.classList.contains("selected")) {
+          element.classList.add("selected");
+          if (end[0] == "") {
+            console.log("CALLED");
+            const exitMessage = document.createElement("p");
+            exitMessage.classList.add("chatText");
+            exitMessage.textContent =
+              "Vielen Dank für Ihr Interesse und viel Erfolg!";
+            chatbox.appendChild(exitMessage);
+          } else {
+            addLines(end - 1, lines, NaN);
+          }
         }
       });
     } else if (lineType === "input") {
+      element.classList.add("chatInput");
       element.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
           // Trim leading and trailing whitespaces

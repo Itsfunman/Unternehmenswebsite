@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/animations.css" />
     <link rel="stylesheet" href="../css/kontaktStyle.css" />
+    <link rel="stylesheet" href="../css/chatStyle.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script
@@ -44,16 +45,27 @@
         </p>
         <form action="https://formspree.io/f/xbjvvkyq" method="POST">
           <label for="name">Name:</label>
-          <input type="text" id="name" name="Name Kund*in" required /><br /><br />
+          <input
+            type="text"
+            id="name"
+            name="Name Kund*in"
+            required
+          /><br /><br />
 
           <label for="email">E-Mail:</label>
-          <input type="email" id="email" name="Reply to:" required /><br /><br />
+          <input
+            type="email"
+            id="email"
+            name="Reply to:"
+            required
+          /><br /><br />
 
           <label for="phone">Telefonnummer:</label>
           <input type="tel" id="phone" name="Telefonnummer" /><br /><br />
 
           <div class="contact-preference">
-            <label for="Bevorzugte Kontaktmethode">Bevorzugte Kontaktmethode:</label
+            <label for="Bevorzugte Kontaktmethode"
+              >Bevorzugte Kontaktmethode:</label
             ><br />
             <input
               type="radio"
@@ -86,15 +98,19 @@
         </form>
 
         <script src="../js/captcha.js"></script>
-
       </div>
 
       <div class="commonStyles kontaktBox slideInLeft delayAnimation-200">
         <h3 class="kontaktTitle">Adresse</h3>
         <div id="map"></div>
       </div>
-    </div>
 
+      <div
+        id="chatbox"
+        class="commonStyles kontaktBox slideInLeft delayAnimation-300"
+      ></div>
+    </div>
+    <script src="../js/chatBot.js"></script>
     <script src="../js/Maps.js"></script>
   </body>
 </html>
