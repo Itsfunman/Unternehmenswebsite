@@ -23,12 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function addLines(lineNumber, lines, value) {
-  const allButtons = chatbox.querySelectorAll(".chatButton");
-  allButtons.forEach((button) => {
-    if (!button.classList.contains("selected")) {
-      button.classList.add("hidden");
-    }
-  });
+
+  checkForSelected();
 
   const specificLine = lines[lineNumber];
 
@@ -37,6 +33,24 @@ function addLines(lineNumber, lines, value) {
     addMessage(lineType, lineContent, value);
     addInputOptions(end, lines, lineNumber);
   }
+}
+
+function checkForSelected() {
+  const allButtons = chatbox.querySelectorAll(".chatButton");
+  allButtons.forEach((button) => {
+    if (!button.classList.contains("selected")) {
+      button.classList.add("hidden");
+    }
+  });
+  
+  const allInput =  chatbox.querySelectorAll(".chatInput");
+  allInput.forEach((input) => {
+    if(input.classList.contains("selected")) {
+      const newParagraph = document.createElement("p");
+      newParagraph.textContent = input.value;
+      input.replaceWith(newParagraph);
+    }
+  });
 }
 //Gets the content of the line
 function getLineElements(specificLine) {
@@ -134,6 +148,7 @@ function addInputOptions(end, lines, lineNumber) {
       element.classList.add("chatInput");
       element.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
+          element.classList.add("selected");
           // Trim leading and trailing whitespaces
           const trimmedInput = element.textContent.trim();
           // Use a regex to keep only digits
@@ -148,12 +163,14 @@ function addInputOptions(end, lines, lineNumber) {
 
             if (value <= 0) {
               value = 1;
+              element.value = 1;
             }
 
             if (lineNumber + 1 == 26 || lineNumber + 1 == 27) {
               // Handle special cases for line 26 and 27
               if (value > 10) {
                 value = 10;
+                element.value = 10;
               }
             }
 
