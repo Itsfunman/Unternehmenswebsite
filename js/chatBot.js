@@ -15,24 +15,25 @@ document.addEventListener("DOMContentLoaded", () => {
       const lines = data.split("\n");
       const lineNumber = 0;
 
-      addLines(lineNumber, lines);
+      addLines(lineNumber, lines, NaN);
     })
     .catch((error) => {
       console.error("Error fetching the file:", error);
     });
 });
 
-function addLines(lineNumber, lines) {
+function addLines(lineNumber, lines, value) {
   const specificLine = lines[lineNumber];
 
-  if (specificLine) { // Check if line exists
+  if (specificLine) {
     const { lineType, lineContent, end } = getLineElements(specificLine);
-    addMessage(lineType, lineContent);
+    addMessage(lineType, lineContent, value);
     addInputOptions(end, lines, lineNumber);
   }
 }
 //Gets the content of the line
 function getLineElements(specificLine) {
+  console.log(specificLine);
   const splitLine = specificLine.split(" ");
   const lineType = getElementAttribute(splitLine[0]);
   const lineContent = getLineContent(splitLine);
@@ -63,24 +64,40 @@ function getLineContent(line) {
 }
 
 function getEndNumbers(end) {
-  const cleanedEnd = end.replace(/\[|\]/g, "");
-  return cleanedEnd.split(",");
+  console.log(end);
+  if (end != "[EXIT]") {
+    const cleanedEnd = end.replace(/[^\d,]/g, "");
+    return cleanedEnd.split(",");
+  } else {
+    return [];
+  }
 }
 
 //adds the text to the chatbox
-function addMessage(lineType, lineContent) {
-  const messageElement = document.createElement(getElementAttribute(lineType));
-  messageElement.textContent = lineContent;
-  chatbox.appendChild(messageElement);
+function addMessage(lineType, lineContent, value) {
+  if (isNaN(value)) {
+    const messageElement = document.createElement(
+      getElementAttribute(lineType)
+    );
+    messageElement.textContent = lineContent;
+    chatbox.appendChild(messageElement);
+  } else {
+    const messageElement = document.createElement(
+      getElementAttribute(lineType)
+    );
+    messageElement.textContent = lineContent.replace("(VALUE)", value);
+    chatbox.appendChild(messageElement);
+  }
 }
 
 // Adds the next element
 function addInputOptions(end, lines, lineNumber) {
   // Split the cleaned string at each comma
   const resultArray = end;
+  console.log(resultArray);
 
   for (let i = 0; i < resultArray.length; i++) {
-    lineNumber += 1;
+    lineNumber = resultArray[i] - 1;
 
     const { lineType, lineContent, end } = getLineElements(lines[lineNumber]);
 
@@ -93,28 +110,47 @@ function addInputOptions(end, lines, lineNumber) {
     if (lineType === "button") {
       element.addEventListener("click", () => {
         console.log(end)
-        addLines(end, lines);
+        if (end.length === 0) {
+          console.log("CALLED");
+          const exitMessage = document.createElement("p");
+          exitMessage.textContent =
+            "Vielen Dank für Ihr Interesse und viel Erfolg!";
+          chatbox.appendChild(exitMessage);
+        } else {
+          addLines(end - 1, lines, NaN);
+        }
       });
     } else if (lineType === "input") {
       element.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
-          // Check for Enter key
-          if (lineNumber + 1 == 26 || lineNumber + 1 == 27) {
-            if (element.textContent < 0) {
-              element.textContent = 1;
-            } else if (element.textContent > 10) {
-              element.textContent = 10;
+          // Trim leading and trailing whitespaces
+          const trimmedInput = element.textContent.trim();
+          // Use a regex to keep only digits
+          const parsedMultiplyValue = parseInt(
+            trimmedInput.replace(/[^\d]/g, "")
+          );
+
+          const parsedValue = element.value.replace(/[^\d]/g, "");
+
+          if (!isNaN(parsedValue)) {
+            let value = parsedValue;
+
+            if (value <= 0) {
+              value = 1;
             }
-            if (lineNumber == 26) {
-              element.textContent *= 3000;
-            } else {
-              element.textContent *= 9000;
+
+            if (lineNumber + 1 == 26 || lineNumber + 1 == 27) {
+              // Handle special cases for line 26 and 27
+              if (value > 10) {
+                value = 10;
+              }
             }
+
+            value *= parsedMultiplyValue;
+
+            addLines(end - 1, lines, value);
           } else {
-            if (element.textContent < 0) {
-              element.textContent = 1;
-            }
-            element.textContent *= 200;
+            console.error("Invalid input for number");
           }
         }
       });
