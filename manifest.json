@@ -1,0 +1,49 @@
+{
+"display_override": ["window-controls-overlay"], 
+"protocol_handlers": [{"protocol":"mailto","url":"/newEmail?to=%s"}], 
+  "background_color": "#43455c",
+  "description": "The web app for the course",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "scholz.pope-pm",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "scholz.pope-pm",
+  "start_url": "/index.html",
+  "theme_color": "#3bba9c",
+  "categories": [
+    "business"
+  ],
+  "screenshots":[
+    {
+      "src": "assets/LOGO.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "description": "PWABuilder Home Screen"
+    }
+  ],
+  "icons": [
+    {
+      "src": "assets/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/manifest-icon-512.maskable.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Alternative",
+      "url": "https://projekt.benjo.at",
+      "description": "Alternative link"
+    }
+  ]
+}
