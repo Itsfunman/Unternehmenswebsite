@@ -4,7 +4,7 @@ fetch('https://my.api.mockaroo.com/daten.json?key=b968ed40')
     const container = document.getElementById('dynamic-employees');
     data.forEach((person) => {
         const employeeBox = document.createElement('div');
-        employeeBox.className = 'employee-box panel review slideInLeft delayAnimation';
+        employeeBox.className = 'employee-box boxes panel review slideInLeft delayAnimation';
         
         employeeBox.innerHTML = `
         <h3 class="boxTitleTeam">${person.first_name} ${person.last_name}</h3>

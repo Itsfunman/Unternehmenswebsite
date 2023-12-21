@@ -51,6 +51,7 @@
     text-align: center;
     color:white; 
 }
+
 .employee-box {
    width: 100%;
     text-align: center;
@@ -62,9 +63,11 @@
 
 
   @media (max-width: 650px)  {
-    .employee-box {
-        width: 80%; 
-        margin-left:10%; 
-        margin-right: 10%;
+
+    #dynamic-employees {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        justify-content: center;
     }
+    
 }

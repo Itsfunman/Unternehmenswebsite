@@ -35,7 +35,7 @@ async function runCounters() {
 runCounters();
 
 
-
+//Code zum ausklappen
 const aboutUsTitles = document.querySelectorAll('.aboutUsTitle');
 
 aboutUsTitles.forEach(title => {
