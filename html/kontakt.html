@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kontakt - TECHSOLUTIONS VIENNA GMBH</title>
@@ -10,23 +10,13 @@
     <link rel="stylesheet" href="../css/chatStyle.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.14/widget.module.min.js"
-      async
-      defer
-    ></script>
-    <script
-      nomodule
-      src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.14/widget.min.js"
-      async
-      defer
-    ></script>
-  </head>
-  <body>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.14/widget.module.min.js" async defer></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/friendly-challenge@0.9.14/widget.min.js" async defer></script>
+</head>
+<body>
     <div class="header">
       <a href="./bewertungen.html"><h4 class="changeButton">Bewertungen</h4></a>
-      <a href="./kontakt.html"><h4 class="changeButton">Kontakt</h4></a>
+      <a href="./kontakt.html"><h4 class="changeButton active">Kontakt</h4></a>
       <a href="../index.html"><h4 class="changeButton">Home</h4></a>
       <a href="./aboutUs.html"><h4 class="changeButton">About Us</h4></a>
       <a href="./team.html"><h4 class="changeButton">Team</h4></a>
@@ -37,11 +27,7 @@
     </div>
 
     <div class="boxes">
-
-      <div
-        id="chatbox"
-        class="commonStyles kontaktBox slideInLeft"
-      ></div>
+      <div id="chatbox" class="commonStyles kontaktBox slideInLeft"></div>
 
       <div class="commonStyles kontaktBox slideInLeft delayAnimation-100">
         <h3 class="kontaktTitle">Kontaktformular</h3>
@@ -49,70 +35,37 @@
           Bitte füllen Sie das Formular aus, um uns zu kontaktieren. Wir werden
           uns so schnell wie möglich bei Ihnen melden.
         </p>
-        <form action="https://formspree.io/f/xbjvvkyq" method="POST">
+        <form id="contactForm" action="https://formspree.io/f/xbjvvkyq" method="POST">
           <label for="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="Name Kund*in"
-            required
-          /><br /><br />
-
+          <input type="text" id="name" name="Name Kund*in" required /><br /><br />
           <label for="email">E-Mail:</label>
-          <input
-            type="email"
-            id="email"
-            name="Reply to:"
-            required
-          /><br /><br />
-
+          <input type="email" id="email" name="Reply to:" required /><br /><br />
           <label for="phone">Telefonnummer:</label>
           <input type="tel" id="phone" name="Telefonnummer" /><br /><br />
-
           <div class="contact-preference">
-            <label for="Bevorzugte Kontaktmethode"
-              >Bevorzugte Kontaktmethode:</label
-            ><br />
-            <input
-              type="radio"
-              id="preferEmail"
-              name="contact-preference"
-              value="email"
-              checked
-            />
+            <label for="Bevorzugte Kontaktmethode">Bevorzugte Kontaktmethode:</label><br />
+            <input type="radio" id="preferEmail" name="contact-preference" value="email" checked />
             <label for="preferEmail">E-Mail</label>
-            <input
-              type="radio"
-              id="preferPhone"
-              name="contact-preference"
-              value="phone"
-            />
+            <input type="radio" id="preferPhone" name="contact-preference" value="phone" />
             <label for="preferPhone">Telefon</label>
-          </div>
-          <br /><br />
-
+          </div><br /><br />
           <label for="message">Nachricht:</label>
           <textarea id="message" name="message" required></textarea><br /><br />
-
-          <div
-            class="frc-captcha"
-            data-sitekey="FCMLE2R88QIKFA8H"
-            data-callback="onCaptchaCompleted"
-          ></div>
-
+          <div class="frc-captcha" data-sitekey="FCMLE2R88QIKFA8H" data-callback="onCaptchaCompleted"></div>
           <input type="submit" value="Senden" id="submitButton" hidden />
         </form>
-
-        <script src="../js/captcha.js"></script>
       </div>
 
       <div class="commonStyles kontaktBox slideInLeft delayAnimation-200">
         <h3 class="kontaktTitle">Adresse</h3>
         <div id="map"></div>
       </div>
-
     </div>
+
+    <script src="../js/captcha.js"></script>
     <script src="../js/chatBot.js"></script>
-    <script src="../js/Maps.js"></script>
-  </body>
+    <script src="../js/map.js"></script>
+    <script src="../js/kontakt.js"></script>
+    
+</body>
 </html>
